@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <h1>Daily Planner</h1>
+            <ul id="nav-menu">
+                <li data-section="writeups"><i class="fas fa-file-alt"></i>Writeups</li>
+                <li data-section="hackerone-reports"><i class="fas fa-bug"></i>HackerOne Reports</li>
+                <li data-section="videos"><i class="fas fa-video"></i>Videos</li>
+                <li data-section="labs"><i class="fas fa-flask"></i>Labs</li>
+                <li data-section="charts"><i class="fas fa-chart-bar"></i>Charts</li>
+            </ul>
+        </nav>
+        <main class="content">
+            <header>
+                <h2 id="section-title">Select a section</h2>
+            </header>
+            <div id="url-form" class="url-form">
+                <div class="input-group">
+                    <textarea id="urls-input" placeholder="Enter URLs (one per line)"></textarea>
+                    <input type="text" id="url-tag" placeholder="Enter tag">
+                    <button id="save-urls"><i class="fas fa-save"></i>Save URLs</button>
+                </div>
+            </div>
+            <div class="lists-container">
+                <section id="pending" class="url-section">
+                    <h3>To Be Completed</h3>
+                    <ul class="url-list"></ul>
+                </section>
+                <section id="completed" class="url-section">
+                    <h3>Completed</h3>
+                    <ul class="url-list"></ul>
+                </section>
+            </div>
+            <div class="charts-container">
+                <div class="chart-wrapper">
+                    <canvas id="completion-chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="timeline-chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="distribution-chart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
